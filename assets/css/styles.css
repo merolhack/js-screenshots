@@ -1,0 +1,126 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.take-screenshot {
+    margin: 0 auto;
+    width: 60%;
+    height: 40px;
+    border: red;
+    border-style: solid;
+    margin-bottom: 5px;
+}
+.take-screenshot button {
+    width: 100%;
+    height: 100%;
+    background-color: #cccccc;
+}
+.small-spacer, .spacer {
+    width: 100%;
+    height: 20px;
+    display: block;
+    clear: both;
+}
+.result .success {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 59px;
+    height: 59px;
+    border: 3px solid #abc111;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25px' height='19px' viewBox='0 0 25 19' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch --%3e%3ctitle%3etick%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cdefs%3e%3c/defs%3e%3cg id='-' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cg id='20-AclaracionesWebView-Respuesta-AbonoTemporal-CargoDuplicado' transform='translate(-175.000000, -145.000000)' fill='%23ABC111' fill-rule='nonzero'%3e%3cg id='icoCTAExitosa' transform='translate(160.000000, 127.000000)'%3e%3cg id='tick' transform='translate(15.000000, 18.000000)'%3e%3cpolygon id='Shape' points='7.3276973 14.0845156 2.59967722 9.65165211 0 12.0890654 6.23923556 17.9388188 6.24639481 17.9320585 7.38543154 19 25 2.48478356 22.3499012 0'%3e%3c/polygon%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+    background-size: 30px;
+    background-position: 50%;
+}
+.result .highlight {
+    font-size: 1.3125em;
+    margin-bottom: 0;
+}
+.result .highlight, .result .highlight-tiny {
+    line-height: 1em;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.result .highlight-tiny {
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1em;
+}
+.green {
+    color: #abc111!important;
+    border-color: #abc111!important;
+}
+.result .congrats {
+    font-size: 1.4375em;
+    font-weight: 200;
+    color: #1a1a1a;
+}
+.result .description {
+    font-size: 1.35em;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+.result .congrats, .result .description {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.result .restrictions {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 1.0625em;
+    color: #4a4a4a;
+    font-weight: 200;
+}
+.result .amount {
+    font-size: 2em;
+    color: #505050;
+    text-align: center;
+    line-height: 1em;
+}
+.result .amount .cents {
+    font-style: normal;
+    font-size: .6em;
+    vertical-align: super;
+}
+.result .SMS {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.0625em;
+    color: #505050;
+    font-weight: 200;
+}
+.result .SMS span {
+    font-weight: 400;
+    font-style: normal;
+}
+.result .SMS {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.0625em;
+    color: #505050;
+    font-weight: 200;
+}
+.result .card.cardResult, .result .cardResult.card-small {
+    padding-top: 0!important;
+    background-image: none!important;
+}
+.result .card.cardResult, .result .card.cardResultLock, .result .cardResult.card-small, .result .cardResultLock.card-small {
+    border: none!important;
+    border-top: 1px solid #c2c2c2!important;
+    border-bottom: 1px solid #c2c2c2!important;
+    border-radius: 0!important;
+    -webkit-box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    box-shadow: none!important;
+    min-height: auto!important;
+    padding-bottom: 0!important;
+}

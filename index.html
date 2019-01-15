@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+  <div id="result" class="container-fluid result">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="spacer"></div>
+        <div class="success"></div>
+        <div class="highlight green"><br>Su solicitud fue recibida</div>
+        <div class="highlight-tiny green"><br>11/ene/2019 13:50</div>
+        <div class="congrats">¡Gracias por la espera, PERLA VANESSA PINEDA ALFAR!</div>
+        <div>
+          <div class="description">Hemos dado de alta su<br>aclaración</div>
+        </div>
+
+        <div class="take-screenshot">
+          <button id="take">OBTENER IMAGEN</button>
+        </div>
+        <div class="restrictions">
+          Para continuar con el proceso envíe al correo<br><strong>aclaracionescomprastc@santander.com.mx</strong><br>la
+          siguiente información:
+        </div>
+        <div class="restrictions">
+          <div class="warning">Esta información deberá enviarla en máximo 5 días naturales, colocando en el asunto del
+            correo el número de folio que le proporcionamos a continuación.</div>
+        </div>
+        <div class="card cardResult">
+          <div class="title">Monto de la aclaración</div>
+          <div class="amount">$ 900.<i class="cents">00</i></div>
+        </div>
+
+        <div class="SMS">
+          Le enviamos la carta acuse a la cuenta de correo que tiene registrada en <span>SuperMóvil</span>.
+        </div>
+        <div class="SMS">
+          La fecha compromiso para el dictamen final de su solicitud será a más tardar el:
+          <div class="spacer"></div>
+        </div>
+        <div class="description">
+          11 de enero de 2019
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/html2canvas.min.js"></script>
+  <!-- Minified version of `es6-promise-auto` below. -->
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+  <script>
+    (function () {
+      function saveAs(uri, filename) {
+        const link = document.createElement('a');
+        if (typeof link.download === 'string') {
+          link.href = uri;
+          link.download = filename;
+          //Firefox requires the link to be in the body
+          document.body.appendChild(link);
+          //simulate click
+          link.click();
+          //remove the link when done
+          document.body.removeChild(link);
+        } else {
+          window.open(uri);
+        }
+      }
+      var screenshot = function () {
+        const wrapper = 'result';
+        html2canvas(document.querySelector(`#${wrapper}`)).then(function (canvas) {
+          console.log(canvas);
+          saveAs(canvas.toDataURL(), 'file-name.png');
+        });
+      };
+      document.getElementById('take').addEventListener("click", screenshot);
+    })();
+  </script>
+</body>
+</html>
