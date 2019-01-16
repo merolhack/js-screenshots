@@ -33,6 +33,12 @@
         <div class="take-screenshot">
           <button id="take2" class="black">OBTENER IMAGEN 2</button>
         </div>
+        
+        <div class="take-screenshot">
+          <form action="https://demo-image.herokuapp.com/santan/test/image" method="GET">
+              <button id="take3" class="green" type="submit">OBTENER IMAGEN 3</button>
+          </form>
+        </div>
 
         <div class="restrictions">
           Para continuar con el proceso envíe al correo<br><strong>aclaracionescomprastc@santander.com.mx</strong><br>la
@@ -92,17 +98,34 @@
         });
       };
       document.getElementById('take1').addEventListener("click", screenshot1);
+
+      const downloadUrl = 'https://demo-image.herokuapp.com/santan/test/image';
+      const request = {
+        download: function () {
+          var postData = new FormData();
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', downloadUrl, true);
+          xhr.responseType = 'blob';
+          xhr.onload = function (e) {
+            var blob = xhr.response;
+            this.saveOrOpenBlob(blob);
+          }.bind(this)
+          xhr.send(postData);
+        },
+        saveOrOpenBlob: function (blob) {
+          var fileName = 'image.png'
+          var tempEl = document.createElement("a");
+          document.body.appendChild(tempEl);
+          tempEl.style = "display: none";
+          url = window.URL.createObjectURL(blob);
+          tempEl.href = url;
+          tempEl.download = fileName;
+          tempEl.click();
+          window.URL.revokeObjectURL(url);
+        }
+      };
       var screenshot2 = function () {
-        var data = null;
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        xhr.addEventListener("readystatechange", function () {
-          if (this.readyState === 4) {
-            console.log(this.responseText);
-          }
-        });
-        xhr.open("GET", "https://demo-image.herokuapp.com/santan/test/image");
-        xhr.send(data);
+        request.download();
       };
       document.getElementById('take2').addEventListener("click", screenshot2);
     })();
