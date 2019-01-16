@@ -12,7 +12,13 @@ body {
 .take-screenshot button {
     width: 100%;
     height: 100%;
+}
+.take-screenshot button.grey {
     background-color: #cccccc;
+}
+.take-screenshot button.black {
+    background-color: #000000;
+    color: white;
 }
 .small-spacer, .spacer {
     width: 100%;

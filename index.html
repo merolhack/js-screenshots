@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
   <link href="assets/css/styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
@@ -25,8 +27,13 @@
         </div>
 
         <div class="take-screenshot">
-          <button id="take">OBTENER IMAGEN</button>
+          <button id="take1" class="grey">OBTENER IMAGEN 1</button>
         </div>
+
+        <div class="take-screenshot">
+          <button id="take2" class="black">OBTENER IMAGEN 2</button>
+        </div>
+
         <div class="restrictions">
           Para continuar con el proceso envíe al correo<br><strong>aclaracionescomprastc@santander.com.mx</strong><br>la
           siguiente información:
@@ -75,15 +82,31 @@
           window.open(uri);
         }
       }
-      var screenshot = function () {
+      var screenshot1 = function () {
         const wrapper = 'result';
         html2canvas(document.querySelector(`#${wrapper}`)).then(function (canvas) {
           console.log(canvas);
           saveAs(canvas.toDataURL(), 'file-name.png');
+          const foo = canvas.toDataURL("image/png", 1);
+          console.log(foo);
         });
       };
-      document.getElementById('take').addEventListener("click", screenshot);
+      document.getElementById('take1').addEventListener("click", screenshot1);
+      var screenshot2 = function () {
+        var data = null;
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            console.log(this.responseText);
+          }
+        });
+        xhr.open("GET", "https://demo-image.herokuapp.com/santan/test/image");
+        xhr.send(data);
+      };
+      document.getElementById('take2').addEventListener("click", screenshot2);
     })();
   </script>
 </body>
+
 </html>
